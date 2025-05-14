@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-container
+    volumes:
+      # Volume pour la persistance des données
+      - data-volume:/app/data
+      # Volume pour les logs
+      - logs-volume:/app/logs
+      # Montage en lecture seule pour les configurations
+      - ./config:/app/config:ro
+    ports:
+      - "5000:5000" # Exemple pour exposer un port
+
+volumes:
+  data-volume:
+    driver: local
+  logs-volume:
+    driver: local

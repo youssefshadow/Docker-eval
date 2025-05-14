@@ -1,0 +1,16 @@
+{
+  "name": "docker-exo",
+  "version": "1.0.0",
+  "description": "Application web avec Node.js et Nginx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "mkdir -p dist && cp -r src/* dist/",
+    "build:windows": "if not exist dist mkdir dist && xcopy src dist /E /I /Y"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {}
+}

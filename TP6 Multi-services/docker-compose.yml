@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "${APP_PORT:-80}:80" # Définit une valeur par défaut si APP_PORT n'est pas défini
+    environment:
+      - FLASK_ENV=${FLASK_ENV:-production} # Définit une valeur par défaut si FLASK_ENV n'est pas défini
+    volumes:
+      - .:/usr/src/app # Monte le répertoire local dans le conteneur
